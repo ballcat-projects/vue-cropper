@@ -334,6 +334,7 @@
 
 <script setup lang="ts">
 import VueCropper from '../../src'
+import 'cropperjs/dist/cropper.css'
 import type Cropper from 'cropperjs'
 import { reactive, ref, watch } from 'vue'
 import {

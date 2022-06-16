@@ -7,7 +7,6 @@
 <script setup lang="ts">
 import Cropper from 'cropperjs'
 import type SetDataOptions from 'cropperjs'
-import 'cropperjs/dist/cropper.css'
 import { nextTick, onMounted, ref, toRaw, watch } from 'vue'
 import type { CSSProperties, PropType } from 'vue'
 /* Ensure the size of the image fit the container perfectly */
