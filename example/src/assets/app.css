@@ -1,0 +1,150 @@
+.docs-demo {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.img-container,
+.img-preview {
+  background-color: #f7f7f7;
+  text-align: center;
+  width: 100%;
+}
+
+.img-container {
+  max-height: 497px;
+  min-height: 200px;
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    min-height: 497px;
+  }
+}
+
+.img-container > img {
+  max-width: 100%;
+}
+
+.docs-preview {
+  margin-right: -1rem;
+}
+
+.img-preview {
+  float: left;
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+  overflow: hidden;
+}
+
+.img-preview > img {
+  max-width: 100%;
+}
+
+.preview-lg {
+  height: 9rem;
+  width: 16rem;
+}
+
+.preview-md {
+  height: 4.5rem;
+  width: 8rem;
+}
+
+.preview-sm {
+  height: 2.25rem;
+  width: 4rem;
+}
+
+.preview-xs {
+  height: 1.125rem;
+  margin-right: 0;
+  width: 2rem;
+}
+
+.docs-data > .input-group {
+  margin-bottom: 0.5rem;
+  height: 31px;
+}
+
+.docs-data .ant-input-group-addon {
+  background-color: #e9ecef;
+  border-radius: 0.2rem;
+  text-align: left;
+}
+
+.docs-data .ant-input-group-addon:first-child {
+  min-width: 4rem;
+}
+
+.docs-data .ant-input-group-addon:last-child {
+  min-width: 3rem;
+}
+
+.docs-buttons > .ant-btn,
+.docs-buttons > .ant-btn-group,
+.docs-buttons > .form-control {
+  margin-bottom: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.docs-buttons .ant-btn-icon-only {
+  width: 40px;
+  height: 40px;
+}
+
+.docs-buttons .ant-btn {
+  height: 40px;
+}
+
+
+.docs-toggles > .ant-btn,
+.docs-toggles > .ant-radio-group,
+.docs-toggles > .dropdown {
+  margin-bottom: 0.5rem;
+}
+
+.docs-toggles > .ant-radio-group .ant-radio-button-wrapper {
+  padding: 0 14px;
+  height: 40px;
+  line-height: 38px;
+}
+
+.btn-group-crop > .ant-btn-primary {
+  background: #28a745;
+  border-color: #28a745;
+ }
+.btn-group-crop > .ant-btn-primary:hover {
+  background: #42bf5b;
+  border-color: #42bf5b;
+}
+.btn-group-crop .ant-btn-primary:hover, .btn-group-crop .ant-btn-primary:focus {
+  color: #fff;
+  background: #42bf5b;
+  border-color: #42bf5b;
+}
+.btn-group-crop .ant-btn-primary:first-child:not(:last-child) {
+  border-right-color: #8ec59a !important;
+}
+.ant-btn-group .ant-btn-primary:not(:first-child):not(:last-child) {
+  border-left-color: #8ec59a !important;
+  border-right-color: #8ec59a !important;
+}
+.btn-group-crop .ant-btn-primary:last-child:not(:first-child), .btn-group-crop .ant-btn-primary + .ant-btn-primary {
+  border-left-color: #8ec59a !important;
+}
+
+
+.btn-secondary.ant-btn-primary {
+  background: #6c757d;
+  border-color: #6c757d;
+}
+.btn-secondary.ant-btn-primary:hover {
+  background: #9397a1;
+  border-color: #9397a1;
+}
+.btn-secondary.ant-btn-primary:hover, .btn-secondary.ant-btn-primary:focus {
+  color: #fff;
+  background: #9397a1;
+  border-color: #9397a1;
+}
