@@ -334,6 +334,8 @@
 
 <script setup lang="ts">
 import VueCropper from '../../src'
+import type { VueCropperInstance } from '../../src'
+
 import 'cropperjs/dist/cropper.css'
 import type Cropper from 'cropperjs'
 import { reactive, ref, watch } from 'vue'
@@ -358,7 +360,6 @@ import {
   PoweroffOutlined,
   DownOutlined
 } from '@ant-design/icons-vue'
-import type { VueCropperInstance } from '../../src'
 import CanvasModal from '@/CanvasModal.vue'
 
 const vueCropperRef = ref<VueCropperInstance>()
