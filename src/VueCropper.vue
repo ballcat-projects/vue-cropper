@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import Cropper from 'cropperjs'
-import type SetDataOptions from 'cropperjs'
 import { nextTick, onMounted, ref, toRaw, watch } from 'vue'
 import type { CSSProperties, PropType } from 'vue'
 /* Ensure the size of the image fit the container perfectly */
@@ -52,12 +51,12 @@ const props = defineProps({
   },
   // An object with the previous cropping result data
   data: {
-    type: Object as PropType<SetDataOptions>,
+    type: Object as PropType<Cropper.SetDataOptions>,
     default: undefined
   },
   // A selector for adding extra containers to preview
   preview: {
-    type: String,
+    type: [String, Array, Object] as PropType<Cropper.Options['preview']>,
     default: ''
   },
   // Re-render the cropper when resize the window
