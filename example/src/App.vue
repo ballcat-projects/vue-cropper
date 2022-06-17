@@ -333,9 +333,8 @@
 </template>
 
 <script setup lang="ts">
-import VueCropper from '../../src'
-import type { VueCropperInstance } from '../../src'
-
+import VueCropper from '@ballcat/vue-cropper'
+import type { VueCropperInstance } from '@ballcat/vue-cropper'
 import 'cropperjs/dist/cropper.css'
 import type Cropper from 'cropperjs'
 import { reactive, ref, watch } from 'vue'
@@ -364,7 +363,7 @@ import CanvasModal from '@/CanvasModal.vue'
 
 const vueCropperRef = ref<VueCropperInstance>()
 
-const imageSrc = ref('/src/assets/demo.jpg')
+const imageSrc = ref(new URL('./assets/demo.jpg', import.meta.url).href)
 
 const cropperOptions: Cropper.Options = reactive({
   aspectRatio: 16 / 9,

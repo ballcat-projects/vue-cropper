@@ -10,6 +10,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@ballcat/vue-cropper": "^1.0.2",
     "ant-design-vue": "^3.2.7",
     "vue": "^3.2.36"
   },
