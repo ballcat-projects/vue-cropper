@@ -1,0 +1,30 @@
+name: github pages
+
+# on 是 Actions 的触发条件，这里的配置说明当 master 分支有提交的时候，根据这个配置文件执行
+on:
+  push:
+    branches:
+      - master # Set a branch to deploy
+
+# jobs 是要执行的任务，我们看到他要执行 deploy
+jobs:
+  build:
+    runs-on: ubuntu-18.04 # 运行环境
+    steps: # 执行步骤
+
+      # checkout 分支
+      - uses: actions/checkout@v3
+      - run: cp -r example/demo .temp
+
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          clean: false
+
+      - run: cp -rf .temp/* .
+      - run: rm -r .temp
+      - run: git config user.name "${{ github.actor }}"
+      - run: git config user.email "${{ github.actor }}@users.noreply.github.com"
+      - run: git add --all
+      - run: git commit --message "${{ github.ref_name }}"
+      - run: git push
