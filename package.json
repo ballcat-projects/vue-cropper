@@ -1,6 +1,7 @@
 {
   "name": "@ballcat/vue-cropper",
-  "version": "1.0.1",
+  "description": "vue image cropper by cropperjs",
+  "version": "1.0.2",
   "scripts": {
     "build": "run-p type-check build-only",
     "build-only": "vite build",
