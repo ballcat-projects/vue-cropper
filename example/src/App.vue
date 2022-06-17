@@ -1,4 +1,25 @@
 <template>
+  <div class="header">
+    <div class="container">
+      <a-row type="flex" align="middle" style="height: 46px">
+        <a-col>
+          <span style="color: rgba(0, 0, 0, 0.85); font-weight: 500; font-size: 24px">
+            Vue Corpper
+          </span>
+        </a-col>
+        <a-col :flex="1"></a-col>
+        <a-col>
+          <a-button type="link" size="large" style="color: rgba(0, 0, 0, 0.85)">
+            <template #icon><GithubOutlined /></template>
+            <span>Github</span>
+          </a-button>
+        </a-col>
+      </a-row>
+    </div>
+  </div>
+
+  <hr style="margin: 0 0 6px" />
+
   <div class="container">
     <a-row justify="center" :gutter="30">
       <a-col :md="18">
@@ -329,6 +350,9 @@
     </a-row>
   </div>
 
+  <!-- 底部占位 -->
+  <div style="height: 40px" />
+
   <canvas-modal ref="canvasModalRef"></canvas-modal>
 </template>
 
@@ -357,7 +381,8 @@ import {
   SyncOutlined,
   UploadOutlined,
   PoweroffOutlined,
-  DownOutlined
+  DownOutlined,
+  GithubOutlined
 } from '@ant-design/icons-vue'
 import CanvasModal from '@/CanvasModal.vue'
 
