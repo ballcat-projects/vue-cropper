@@ -225,18 +225,14 @@ function initCropper() {
 }
 
 // init when first mounted
-onMounted(() => {
-  cropper = initCropper()
-})
+onMounted(() => (cropper = initCropper()))
 
 // reinit when props change
 watch(
   () => props,
   () => {
     cropper.destroy()
-    nextTick(
-      () => (cropper = new Cropper(imageRef.value, toRaw(props) as unknown as Cropper.Options))
-    )
+    nextTick(() => (cropper = initCropper()))
   },
   { deep: true }
 )
