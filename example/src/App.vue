@@ -4,12 +4,17 @@
       <a-row type="flex" align="middle" style="height: 46px">
         <a-col>
           <span style="color: rgba(0, 0, 0, 0.85); font-weight: 500; font-size: 24px">
-            Vue Corpper
+            Vue Cropper
           </span>
         </a-col>
         <a-col :flex="1"></a-col>
         <a-col>
-          <a-button type="link" size="large" style="color: rgba(0, 0, 0, 0.85)">
+          <a-button
+            type="link"
+            size="large"
+            style="color: rgba(0, 0, 0, 0.85)"
+            href="https://github.com/ballcat-projects/vue-cropper"
+          >
             <template #icon><GithubOutlined /></template>
             <span>Github</span>
           </a-button>
