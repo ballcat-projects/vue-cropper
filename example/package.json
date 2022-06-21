@@ -7,10 +7,11 @@
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "preinstall": "npm install ../"
   },
   "dependencies": {
-    "@ballcat/vue-cropper": "^1.0.2",
+    "@ballcat/vue-cropper": "file:..",
     "ant-design-vue": "^3.2.7",
     "vue": "^3.2.36"
   },
