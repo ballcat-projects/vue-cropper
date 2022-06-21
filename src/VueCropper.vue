@@ -1,13 +1,19 @@
 <template>
   <div>
-    <img ref="imageRef" :src="props.src" :alt="props.alt" :style="[imageStyle, props.imgStyle]" />
+    <img
+      ref="imageRef"
+      :src="props.src"
+      :alt="props.alt"
+      :crossorigin="imgCrossOrigin"
+      :style="[imageStyle, props.imgStyle]"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import Cropper from 'cropperjs'
 import { nextTick, onMounted, ref, toRaw, watch } from 'vue'
-import type { CSSProperties, PropType } from 'vue'
+import type { CSSProperties, PropType, ImgHTMLAttributes } from 'vue'
 /* Ensure the size of the image fit the container perfectly */
 const imageStyle = {
   display: 'block',
@@ -27,6 +33,10 @@ const props = defineProps({
   imgStyle: {
     type: Object as PropType<CSSProperties>,
     default: () => ({})
+  },
+  imgCrossOrigin: {
+    type: String as PropType<ImgHTMLAttributes['crossorigin']>,
+    default: undefined
   },
   // ========= CropperJS options =======
   // Define the view mode of the cropper
@@ -218,21 +228,24 @@ const props = defineProps({
 
 const imageRef = ref()
 
-let cropper: Cropper
-
+let cropper: Cropper | undefined
 function initCropper() {
-  return new Cropper(imageRef.value, toRaw(props) as unknown as Cropper.Options)
+  if (props.src) {
+    cropper = new Cropper(imageRef.value, toRaw(props) as unknown as Cropper.Options)
+  } else {
+    cropper = undefined
+  }
 }
 
 // init when first mounted
-onMounted(() => (cropper = initCropper()))
+onMounted(initCropper)
 
 // reinit when props change
 watch(
   () => props,
   () => {
-    cropper.destroy()
-    nextTick(() => (cropper = initCropper()))
+    cropper?.destroy()
+    nextTick(initCropper)
   },
   { deep: true }
 )
@@ -440,15 +453,19 @@ defineExpose({
    * flip the image horizontally
    */
   flipX() {
-    const { scaleX } = cropper.getData()
-    cropper.scaleX(-scaleX)
+    if (cropper) {
+      const { scaleX } = cropper.getData()
+      cropper.scaleX(-scaleX)
+    }
   },
   /**
    * flip the image vertically
    */
   flipY() {
-    const { scaleY } = cropper.getData()
-    cropper.scaleY(-scaleY)
+    if (cropper) {
+      const { scaleY } = cropper.getData()
+      cropper.scaleY(-scaleY)
+    }
   }
 })
 </script>

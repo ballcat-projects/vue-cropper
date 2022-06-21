@@ -104,11 +104,12 @@ VueCropper props that can be used are divided into two parts, custom and all pro
 
 ### custom options
 
-| Property | Description                         | Type    | Required |
-| :------- | :---------------------------------- | :------ | :------- |
-| src      | origin image src                    | string  | true     |
-| imgStyle | the img element style               | object  | --       |
-| alt      | the img element alt attribute value | boolean | --       |
+| Property       | Description                                 | Type    | Required |
+| :------------- | :------------------------------------------ | :------ | :------- |
+| src            | origin image src                            | string  | true     |
+| imgStyle       | the img element style                       | object  | --       |
+| imgCrossOrigin | the img element crossOrigin attribute value | string  | --       |
+| alt            | the img element alt attribute value         | boolean | --       |
 
 ### Cropperjs options
 
