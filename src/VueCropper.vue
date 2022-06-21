@@ -380,8 +380,6 @@ defineExpose({
    * @returns {Cropper} this
    */
   scaleX(scaleX: number) {
-    cropper.scaleX(-1)
-    cropper.scaleX(-1)
     return cropper?.scaleX(scaleX)
   },
   /**
