@@ -1,0 +1,4 @@
+/dist/*
+.local
+/node_modules/**
+/example/src/assets/*
