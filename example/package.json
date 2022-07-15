@@ -11,7 +11,7 @@
     "preinstall": "npm install ../"
   },
   "dependencies": {
-    "@ballcat/vue-cropper": "file:..",
+    "@ballcat/vue-cropper": "^1.0.4",
     "ant-design-vue": "^3.2.7",
     "vue": "^3.2.36"
   },
