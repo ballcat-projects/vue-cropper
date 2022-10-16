@@ -61,6 +61,7 @@ app.use(VueCropper).mount('#app');
   />
 </template>
 <script>
+import {ref, onMounted} from 'vue'
 import VueCropper from '@ballcat/vue-cropper';
 import 'cropperjs/dist/cropper.css';
 
@@ -69,6 +70,7 @@ export default {
     VueCropper,
   },
   setup() {
+    const imgSrc = ref('the image path')
     const vueCropperRef = ref(null);
 
     onMounted(() => {
@@ -76,6 +78,7 @@ export default {
     });
 
     return {
+      imgSrc,
       vueCropperRef
     };
   }
@@ -87,9 +90,11 @@ or use setup script
 
 ```vue
 <script setup>
+import {ref, onMounted} from 'vue'
 import VueCropper from '@ballcat/vue-cropper';
 import 'cropperjs/dist/cropper.css';
 
+const imgSrc = ref('the image path')
 const vueCropperRef = ref(null);
 
 onMounted(() => {
