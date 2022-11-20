@@ -2,6 +2,8 @@
 
 A Vue image cropper components by cropperjs.
 
+Github: https://github.com/ballcat-projects/vue-cropper
+
 ## Demo
 
 online demo: https://ballcat-projects.github.io/vue-cropper
