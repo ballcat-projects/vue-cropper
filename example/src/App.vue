@@ -52,36 +52,36 @@
         <div class="docs-data">
           <a-input
             class="input-group"
-            :value="Math.round(data.x)"
+            :value="convertNumber(data.x)"
             addon-before="X"
             addon-after="px"
           />
           <a-input
             class="input-group"
-            :value="Math.round(data.y)"
+            :value="convertNumber(data.y)"
             addon-before="Y"
             addon-after="px"
           />
           <a-input
             class="input-group"
-            :value="Math.round(data.width)"
+            :value="convertNumber(data.width)"
             addon-before="Width"
             addon-after="px"
           />
           <a-input
             class="input-group"
-            :value="Math.round(data.height)"
+            :value="convertNumber(data.height)"
             addon-before="Height"
             addon-after="px"
           />
           <a-input
             class="input-group"
-            :value="Math.round(data.rotate)"
+            :value="convertNumber(data.rotate)"
             addon-before="Rotate"
             addon-after="deg"
           />
-          <a-input class="input-group" :value="Math.round(data.scaleX)" addon-before="ScaleX" />
-          <a-input class="input-group" :value="Math.round(data.scaleY)" addon-before="ScaleY" />
+          <a-input class="input-group" :value="convertNumber(data.scaleX)" addon-before="ScaleX" />
+          <a-input class="input-group" :value="convertNumber(data.scaleY)" addon-before="ScaleY" />
         </div>
       </a-col>
     </a-row>
@@ -90,69 +90,69 @@
       <a-col :md="18">
         <div class="docs-buttons">
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.setDragMode('move')">
+            <a-button type="primary" @click="vueCropperRef?.setDragMode('move')">
               <template #icon><drag-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.setDragMode('crop')">
+            <a-button type="primary" @click="vueCropperRef?.setDragMode('crop')">
               <template #icon><gateway-outlined /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.zoom(0.1)">
+            <a-button type="primary" @click="vueCropperRef?.zoom(0.1)">
               <template #icon><zoom-in-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.zoom(-0.1)">
+            <a-button type="primary" @click="vueCropperRef?.zoom(-0.1)">
               <template #icon><zoom-out-outlined /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.move(-10, 0)">
+            <a-button type="primary" @click="vueCropperRef?.move(-10, 0)">
               <template #icon><arrow-left-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.move(10, 0)">
+            <a-button type="primary" @click="vueCropperRef?.move(10, 0)">
               <template #icon><arrow-right-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.move(0, -10)">
+            <a-button type="primary" @click="vueCropperRef?.move(0, -10)">
               <template #icon><arrow-up-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.move(0, 10)">
+            <a-button type="primary" @click="vueCropperRef?.move(0, 10)">
               <template #icon><arrow-down-outlined /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.rotate(-45)">
+            <a-button type="primary" @click="vueCropperRef?.rotate(-45)">
               <template #icon><rotate-left-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.rotate(45)">
+            <a-button type="primary" @click="vueCropperRef?.rotate(45)">
               <template #icon><rotate-right-outlined /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.flipX()">
+            <a-button type="primary" @click="vueCropperRef?.flipX()">
               <template #icon><swap-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.flipY()">
+            <a-button type="primary" @click="vueCropperRef?.flipY()">
               <template #icon><swap-outlined :rotate="90" /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.crop()">
+            <a-button type="primary" @click="vueCropperRef?.crop()">
               <template #icon><check-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.clear()">
+            <a-button type="primary" @click="vueCropperRef?.clear()">
               <template #icon><close-outlined /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.disable()">
+            <a-button type="primary" @click="vueCropperRef?.disable()">
               <template #icon><lock-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.enable()">
+            <a-button type="primary" @click="vueCropperRef?.enable()">
               <template #icon><unlock-outlined /></template>
             </a-button>
           </a-button-group>
           <a-button-group>
-            <a-button type="primary" @click="vueCropperRef.reset()">
+            <a-button type="primary" @click="vueCropperRef?.reset()">
               <template #icon><sync-outlined /></template>
             </a-button>
             <input
@@ -165,7 +165,7 @@
             <a-button type="primary" @click="fileInputRef.click()">
               <template #icon><upload-outlined /></template>
             </a-button>
-            <a-button type="primary" @click="vueCropperRef.destroy()">
+            <a-button type="primary" @click="vueCropperRef?.destroy()">
               <template #icon><poweroff-outlined /></template>
             </a-button>
           </a-button-group>
@@ -185,7 +185,7 @@
           <a-button
             type="primary"
             class="btn-secondary"
-            @click="updateAreaData(vueCropperRef.getData())"
+            @click="updateAreaData(vueCropperRef?.getData() || {})"
           >
             Get Data
           </a-button>
@@ -197,7 +197,7 @@
           <a-button
             type="primary"
             class="btn-secondary"
-            @click="updateAreaData(vueCropperRef.getContainerData())"
+            @click="updateAreaData(vueCropperRef?.getContainerData() || {})"
           >
             Get Container Data
           </a-button>
@@ -205,7 +205,7 @@
           <a-button
             type="primary"
             class="btn-secondary"
-            @click="updateAreaData(vueCropperRef.getImageData())"
+            @click="updateAreaData(vueCropperRef?.getImageData() || {})"
           >
             Get Image Data
           </a-button>
@@ -213,7 +213,7 @@
           <a-button
             type="primary"
             class="btn-secondary"
-            @click="updateAreaData(vueCropperRef.getCanvasData())"
+            @click="updateAreaData(vueCropperRef?.getCanvasData() || {})"
           >
             Get Canvas Data
           </a-button>
@@ -225,7 +225,7 @@
           <a-button
             type="primary"
             class="btn-secondary"
-            @click="updateAreaData(vueCropperRef.getCropBoxData())"
+            @click="updateAreaData(vueCropperRef?.getCropBoxData() || {})"
           >
             Get Crop Box Data
           </a-button>
@@ -234,19 +234,19 @@
             Set Crop Box Data
           </a-button>
 
-          <a-button type="primary" class="btn-secondary" @click="vueCropperRef.moveTo(0)">
+          <a-button type="primary" class="btn-secondary" @click="vueCropperRef?.moveTo(0)">
             Move to [0,0]
           </a-button>
 
-          <a-button type="primary" class="btn-secondary" @click="vueCropperRef.zoomTo(1)">
+          <a-button type="primary" class="btn-secondary" @click="vueCropperRef?.zoomTo(1)">
             Zoom to 100%
           </a-button>
 
-          <a-button type="primary" class="btn-secondary" @click="vueCropperRef.rotateTo(180)">
+          <a-button type="primary" class="btn-secondary" @click="vueCropperRef?.rotateTo(180)">
             Rotate 180°
           </a-button>
 
-          <a-button type="primary" class="btn-secondary" @click="vueCropperRef.scale(-2, -1)">
+          <a-button type="primary" class="btn-secondary" @click="vueCropperRef?.scale(-2, -1)">
             Scale (-2, -1)
           </a-button>
 
@@ -426,6 +426,7 @@ watch(
 )
 
 const data = ref<Cropper.SetDataOptions>({})
+const convertNumber = (num?: number) => num != null ? Math.round(num): undefined
 
 const onCrop = (e: CustomEvent) => {
   data.value = e.detail
