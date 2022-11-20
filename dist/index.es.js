@@ -1,12 +1,11 @@
-import { defineComponent, ref, onMounted, watch, nextTick, openBlock, createElementBlock, createElementVNode, normalizeStyle, toRaw } from "vue";
-import Cropper from "cropperjs";
-const _hoisted_1 = ["src", "alt", "crossorigin"];
-const _sfc_main = /* @__PURE__ */ defineComponent({
+import { defineComponent as s, ref as r, onMounted as f, watch as m, nextTick as y, openBlock as g, createElementBlock as v, createElementVNode as B, normalizeStyle as C, toRaw as b } from "vue";
+import D from "cropperjs";
+const h = ["src", "alt", "crossorigin"], x = /* @__PURE__ */ s({
   __name: "VueCropper",
   props: {
     src: {
       type: String,
-      required: true
+      required: !0
     },
     alt: {
       type: String,
@@ -46,43 +45,43 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     },
     responsive: {
       type: Boolean,
-      default: true
+      default: !0
     },
     restore: {
       type: Boolean,
-      default: true
+      default: !0
     },
     checkCrossOrigin: {
       type: Boolean,
-      default: true
+      default: !0
     },
     checkOrientation: {
       type: Boolean,
-      default: true
+      default: !0
     },
     modal: {
       type: Boolean,
-      default: true
+      default: !0
     },
     guides: {
       type: Boolean,
-      default: true
+      default: !0
     },
     center: {
       type: Boolean,
-      default: true
+      default: !0
     },
     highlight: {
       type: Boolean,
-      default: true
+      default: !0
     },
     background: {
       type: Boolean,
-      default: true
+      default: !0
     },
     autoCrop: {
       type: Boolean,
-      default: true
+      default: !0
     },
     autoCropArea: {
       type: Number,
@@ -90,27 +89,27 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     },
     movable: {
       type: Boolean,
-      default: true
+      default: !0
     },
     rotatable: {
       type: Boolean,
-      default: true
+      default: !0
     },
     scalable: {
       type: Boolean,
-      default: true
+      default: !0
     },
     zoomable: {
       type: Boolean,
-      default: true
+      default: !0
     },
     zoomOnTouch: {
       type: Boolean,
-      default: true
+      default: !0
     },
     zoomOnWheel: {
       type: Boolean,
-      default: true
+      default: !0
     },
     wheelZoomRatio: {
       type: Number,
@@ -118,15 +117,15 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     },
     cropBoxMovable: {
       type: Boolean,
-      default: true
+      default: !0
     },
     cropBoxResizable: {
       type: Boolean,
-      default: true
+      default: !0
     },
     toggleDragModeOnDblclick: {
       type: Boolean,
-      default: true
+      default: !0
     },
     minCanvasWidth: {
       type: Number,
@@ -177,133 +176,127 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       default: void 0
     }
   },
-  setup(__props, { expose }) {
-    const props = __props;
-    const imageStyle = {
+  setup(o, { expose: i }) {
+    const n = o, d = {
       display: "block",
       maxWidth: "100%"
-    };
-    const imageRef = ref();
-    let cropper;
-    function initCropper() {
-      if (props.src) {
-        cropper = new Cropper(imageRef.value, toRaw(props));
-      } else {
-        cropper = void 0;
-      }
+    }, u = r();
+    let e;
+    function l() {
+      n.src ? e = new D(u.value, b(n)) : e = void 0;
     }
-    onMounted(initCropper);
-    watch(() => props, () => {
-      cropper == null ? void 0 : cropper.destroy();
-      nextTick(initCropper);
-    }, { deep: true });
-    expose({
+    return f(l), m(
+      () => n,
+      () => {
+        e == null || e.destroy(), y(l);
+      },
+      { deep: !0 }
+    ), i({
       clear() {
-        return cropper == null ? void 0 : cropper.clear();
+        return e == null ? void 0 : e.clear();
       },
       crop() {
-        return cropper == null ? void 0 : cropper.crop();
+        return e == null ? void 0 : e.crop();
       },
       destroy() {
-        return cropper == null ? void 0 : cropper.destroy();
+        return e == null ? void 0 : e.destroy();
       },
       disable() {
-        return cropper == null ? void 0 : cropper.disable();
+        return e == null ? void 0 : e.disable();
       },
       enable() {
-        return cropper == null ? void 0 : cropper.enable();
+        return e == null ? void 0 : e.enable();
       },
       getCanvasData() {
-        return cropper == null ? void 0 : cropper.getCanvasData();
+        return e == null ? void 0 : e.getCanvasData();
       },
       getContainerData() {
-        return cropper == null ? void 0 : cropper.getContainerData();
+        return e == null ? void 0 : e.getContainerData();
       },
       getCropBoxData() {
-        return cropper == null ? void 0 : cropper.getCropBoxData();
+        return e == null ? void 0 : e.getCropBoxData();
       },
-      getCroppedCanvas(options) {
-        return cropper == null ? void 0 : cropper.getCroppedCanvas(options);
+      getCroppedCanvas(t) {
+        return e == null ? void 0 : e.getCroppedCanvas(t);
       },
-      getData(rounded) {
-        return cropper == null ? void 0 : cropper.getData(rounded);
+      getData(t) {
+        return e == null ? void 0 : e.getData(t);
       },
       getImageData() {
-        return cropper == null ? void 0 : cropper.getImageData();
+        return e == null ? void 0 : e.getImageData();
       },
-      move(offsetX, offsetY) {
-        return cropper == null ? void 0 : cropper.move(offsetX, offsetY);
+      move(t, a) {
+        return e == null ? void 0 : e.move(t, a);
       },
-      moveTo(x, y) {
-        return cropper == null ? void 0 : cropper.moveTo(x, y);
+      moveTo(t, a) {
+        return e == null ? void 0 : e.moveTo(t, a);
       },
-      replace(url, hasSameSize) {
-        return cropper == null ? void 0 : cropper.replace(url, hasSameSize);
+      replace(t, a) {
+        return e == null ? void 0 : e.replace(t, a);
       },
       reset() {
-        return cropper == null ? void 0 : cropper.reset();
+        return e == null ? void 0 : e.reset();
       },
-      rotate(degree) {
-        return cropper == null ? void 0 : cropper.rotate(degree);
+      rotate(t) {
+        return e == null ? void 0 : e.rotate(t);
       },
-      rotateTo(degree) {
-        return cropper == null ? void 0 : cropper.rotateTo(degree);
+      rotateTo(t) {
+        return e == null ? void 0 : e.rotateTo(t);
       },
-      scale(scaleX, scaleY) {
-        return cropper == null ? void 0 : cropper.scale(scaleX, scaleY);
+      scale(t, a) {
+        return e == null ? void 0 : e.scale(t, a);
       },
-      scaleX(scaleX) {
-        return cropper == null ? void 0 : cropper.scaleX(scaleX);
+      scaleX(t) {
+        return e == null ? void 0 : e.scaleX(t);
       },
-      scaleY(scaleY) {
-        return cropper == null ? void 0 : cropper.scaleY(scaleY);
+      scaleY(t) {
+        return e == null ? void 0 : e.scaleY(t);
       },
-      setAspectRatio(aspectRatio) {
-        return cropper == null ? void 0 : cropper.setAspectRatio(aspectRatio);
+      setAspectRatio(t) {
+        return e == null ? void 0 : e.setAspectRatio(t);
       },
-      setCanvasData(data) {
-        return cropper == null ? void 0 : cropper.setCanvasData(data);
+      setCanvasData(t) {
+        return e == null ? void 0 : e.setCanvasData(t);
       },
-      setCropBoxData(data) {
-        return cropper == null ? void 0 : cropper.setCropBoxData(data);
+      setCropBoxData(t) {
+        return e == null ? void 0 : e.setCropBoxData(t);
       },
-      setData(data) {
-        return cropper == null ? void 0 : cropper.setData(data);
+      setData(t) {
+        return e == null ? void 0 : e.setData(t);
       },
-      setDragMode(dragMode) {
-        return cropper == null ? void 0 : cropper.setDragMode(dragMode);
+      setDragMode(t) {
+        return e == null ? void 0 : e.setDragMode(t);
       },
-      zoom(ratio) {
-        return cropper == null ? void 0 : cropper.zoom(ratio);
+      zoom(t) {
+        return e == null ? void 0 : e.zoom(t);
       },
-      zoomTo(ratio, pivot) {
-        return cropper == null ? void 0 : cropper.zoomTo(ratio, pivot);
+      zoomTo(t, a) {
+        return e == null ? void 0 : e.zoomTo(t, a);
       },
       flipX() {
-        if (cropper) {
-          const { scaleX } = cropper.getData();
-          cropper.scaleX(-scaleX);
+        if (e) {
+          const { scaleX: t } = e.getData();
+          e.scaleX(-t);
         }
       },
       flipY() {
-        if (cropper) {
-          const { scaleY } = cropper.getData();
-          cropper.scaleY(-scaleY);
+        if (e) {
+          const { scaleY: t } = e.getData();
+          e.scaleY(-t);
         }
       }
-    });
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", null, [
-        createElementVNode("img", {
-          ref_key: "imageRef",
-          ref: imageRef,
-          src: props.src,
-          alt: props.alt,
-          crossorigin: __props.imgCrossOrigin,
-          style: normalizeStyle([imageStyle, props.imgStyle])
-        }, null, 12, _hoisted_1)
-      ]);
-    };
+    }), (t, a) => (g(), v("div", null, [
+      B("img", {
+        ref_key: "imageRef",
+        ref: u,
+        src: n.src,
+        alt: n.alt,
+        crossorigin: o.imgCrossOrigin,
+        style: C([d, n.imgStyle])
+      }, null, 12, h)
+    ]));
   }
 });
-export { _sfc_main as default };
+export {
+  x as default
+};
