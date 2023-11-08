@@ -9,7 +9,7 @@ on:
 # jobs 是要执行的任务，我们看到他要执行 deploy
 jobs:
   build:
-    runs-on: ubuntu-18.04 # 运行环境
+    runs-on: ubuntu-latest # 运行环境
     steps: # 执行步骤
 
       # checkout 分支
